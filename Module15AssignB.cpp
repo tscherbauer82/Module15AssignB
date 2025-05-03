@@ -1,12 +1,22 @@
-// Module15AssignB.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <cmath>
+using namespace std;
+
+//function for float/double
+template <class templ>
+templ half(templ value) {
+    return value / 2;
+}
+
+//function for integer
 
 int main()
 {
-    std::cout << "Hello World!\n";
-}
+    double a = 7.0;
+    float b = 5.0f;
+    int c = 3;
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+    cout << half(a) << endl;
+    cout << half(b) << endl;
+    cout << half(c) << endl;
+}
