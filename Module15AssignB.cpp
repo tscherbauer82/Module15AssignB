@@ -2,13 +2,17 @@
 #include <cmath>
 using namespace std;
 
-//function for float/double
+//gneeric function for float/double
 template <class templ>
 templ half(templ value) {
     return value / 2;
 }
 
-//function for integer
+//specialized function for integer (found help at https://www.geeksforgeeks.org/template-specialization-c/#)
+template<>
+int half<int>(int value) {
+    return static_cast<int>(round(static_cast<float>(value) / 2));
+}
 
 int main()
 {
@@ -19,4 +23,6 @@ int main()
     cout << half(a) << endl;
     cout << half(b) << endl;
     cout << half(c) << endl;
+
+    return 0;
 }
